@@ -85,3 +85,13 @@ li {
    flex-wrap: wrap;
    flex-direction: row;
  }
+
+ /*
+  *
+  * Footer
+  *
+  */
+
+.site-footer {
+  text-align: center;
+}
