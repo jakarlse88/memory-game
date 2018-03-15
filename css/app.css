@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.page-wrapper {
+  width: 90%;
+  height: 90vh;
+  margin: 100px auto;
+}
+
+/*
+ *
+ * Cards
+ *
+ */
+
+.card {
+  /* TODO: dynamic sizing */
+  width: 100px;
+  height: 100px;
+  border: 2px dashed orange;
+  margin: 10px auto;
+
+}
+
+/*
+ *
+ * Flex
+ *
+ */
+
+ .flex-container {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+ }
+
+ .container__first-row {
+   order: 0;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+
+ }
+
+ .container__second-row {
+   order: 1;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+ }
+
+ .container__third-row {
+   order: 2;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+ }
+
+ .container__fourth-row {
+   order: 3;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+ }
