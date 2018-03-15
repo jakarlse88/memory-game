@@ -1,17 +1,35 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+/*
+ *
+ * Body
+ *
+ */
 
 .page-wrapper {
   width: 90%;
   height: 90vh;
   margin: 100px auto;
+}
+
+/*
+ *
+ * Header
+ *
+ */
+
+.page-header {
+  text-align: center;
+}
+
+.game-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+li {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
 }
 
 /*
@@ -26,7 +44,6 @@ body {
   height: 100px;
   border: 2px dashed orange;
   margin: 10px auto;
-
 }
 
 /*
@@ -46,7 +63,6 @@ body {
    display: flex;
    flex-wrap: wrap;
    flex-direction: row;
-
  }
 
  .container__second-row {
