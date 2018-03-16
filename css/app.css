@@ -53,6 +53,7 @@ li {
   border: 2px dashed orange;
   margin: 10px auto;
   padding: 50px 25px;
+  cursor: pointer;
 }
 
 /*
