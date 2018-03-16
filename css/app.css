@@ -43,6 +43,10 @@ li {
  *
  */
 
+.front {
+  display: none;
+}
+
 .card {
   /* TODO: dynamic sizing */
   width: 100px;
