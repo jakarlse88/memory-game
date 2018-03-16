@@ -43,10 +43,6 @@ li {
  *
  */
 
-.front {
-  display: none;
-}
-
 .card {
   /* TODO: dynamic sizing */
   width: 100px;
@@ -54,6 +50,12 @@ li {
   margin: 10px auto;
   padding: 50px 25px;
   cursor: pointer;
+}
+
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
 }
 
 /*
