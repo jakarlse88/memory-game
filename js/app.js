@@ -35,19 +35,23 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-const card = document.querySelector('#firstCard');
 
-firstCard.addEventListener('click', function(evt) {
+// TODO: refactor into function
+const cards = document.getElementsByClassName('card');
 
-  if (this.firstElementChild.classList.contains('hide')) {
-    this.firstElementChild.classList.remove('hide');
-  } else  {
-    this.firstElementChild.classList.add('hide');
-  }
+for (let i = 0; i < cards.length; i++) {
+  cards[i].addEventListener('click', function(evt) {
 
-  if (this.lastElementChild.classList.contains('hide')) {
-    this.lastElementChild.classList.remove('hide');
-  } else {
-    this.lastElementChild.classList.add('hide');
-  }
-});
+    if (this.firstElementChild.classList.contains('hide')) {
+      this.firstElementChild.classList.remove('hide');
+    } else  {
+      this.firstElementChild.classList.add('hide');
+    }
+
+    if (this.lastElementChild.classList.contains('hide')) {
+      this.lastElementChild.classList.remove('hide');
+    } else {
+      this.lastElementChild.classList.add('hide');
+    }
+  });
+}
