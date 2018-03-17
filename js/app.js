@@ -1,9 +1,9 @@
 // All of the cards
-const cards = document.getElementsByClassName('card');
+
 
 // All of the card things
 function cardEvents() {
-  flipCard(cards);
+  flipCard();
 }
 
 /*
@@ -29,7 +29,9 @@ function shuffle(array) {
 }
 
 // Show/hide card on click
-function flipCard(cards) {
+function flipCard() {
+  const cards = document.getElementsByClassName('card');
+
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener('click', function(evt) {
 
