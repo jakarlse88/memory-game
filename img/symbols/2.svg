@@ -1,3 +1,0 @@
-<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width='400' height='400' viewBox='84 -44 412 462'>
-<path id='1' style='fill:black' onmouseover='evt.target.setAttribute("style", "fill:red");' onmouseout='evt.target.setAttribute("style", "fill:black");' d='M152,386 Q116,386 116,352 L116,-12 L160,-12 Q180,-8 162,4 L162,326 Q162,342 176,342 L374,342 Q400,342 406,320 L418,280 L464,292 L452,336 Q438,386 398,386 Z'/>
-</svg>

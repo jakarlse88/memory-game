@@ -1,17 +1,105 @@
 // All of the cards
+const listOfCards = [
+  {
+    name: 'One',
+    image: 'kanji_1.svg',
+    id: 'one'
+  },
+  {
+    name: 'Two',
+    image: 'kanji_2.svg',
+    id: 'two'
+  },
+  {
+    name: 'Three',
+    image: 'kanji_3.svg',
+    id: 'three'
+  },
+  {
+    name: 'Four',
+    image: 'kanji_4.svg',
+    id: 'four'
+  },
+  {
+    name: 'Five',
+    image: 'kanji_5.svg',
+    id: 'five'
+  },
+  {
+    name: 'Six',
+    image: 'kanji_6.svg',
+    id: 'six'
+  },
+  {
+    name: 'Seven',
+    image: 'kanji_7.svg',
+    id: 'seven'
+  },
+  {
+    name: 'Eight',
+    image: 'kanji_8.svg',
+    id: 'eight'
+  },
+  {
+    name: 'One',
+    image: 'kanji_1.svg',
+    id: 'one_2'
+  },
+  {
+    name: 'Two',
+    image: 'kanji_2.svg',
+    id: 'two_2'
+  },
+  {
+    name: 'Three',
+    image: 'kanji_3.svg',
+    id: 'three_2'
+  },
+  {
+    name: 'Four',
+    image: 'kanji_4.svg',
+    id: 'four_2'
+  },
+  {
+    name: 'Five',
+    image: 'kanji_5.svg',
+    id: 'five_2'
+  },
+  {
+    name: 'Six',
+    image: 'kanji_6.svg',
+    id: 'six_2'
+  },
+  {
+    name: 'Seven',
+    image: 'kanji_7.svg',
+    id: 'seven_2'
+  },
+  {
+    name: 'Eight',
+    image: 'kanji_8.svg',
+    id: 'eight_2'
+  }
+];
 
+console.log(listOfCards);
 
 // All of the card things
 function cardEvents() {
   flipCard();
+  displayCards();
 }
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+// Display cards on the page
+function displayCards() {
+ // Shuffle the list of cards using the provided "shuffle" method below
+ shuffle(listOfCards);
+
+ // Loop through each card and create its HTML
+ let index = 1;
+
+ // Add each card's HTML to the page
+}
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
