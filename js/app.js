@@ -92,13 +92,27 @@ function cardEvents() {
 
 // Display cards on the page
 function displayCards() {
- // Shuffle the list of cards using the provided "shuffle" method below
- shuffle(listOfCards);
+  // Shuffle the list of cards using the provided "shuffle" method below
+  shuffle(listOfCards);
 
- // Loop through each card and create its HTML
- let index = 1;
+  // Loop through each card and create its HTML
+  const cardHTML = [];
 
- // Add each card's HTML to the page
+  for (let i = 0; i < listOfCards.length; i++) {
+    cardHTML.push('<img src="img/symbols/' + listOfCards[i].image + '"' +
+                  ' id="' + listOfCards[i].id + '"' +
+                  ' alt="' + listOfCards[i].name + '">');
+  }
+  console.log(cardHTML);
+
+  // Add each card's HTML to the page
+  const cardContainers = document.getElementsByClassName('card');
+  console.log(cardContainers);
+
+  for (let i = 0; i < cardContainers.length; i++) {
+    cardContainers[i].firstElementChild.innerHTML = cardHTML[i];
+  }
+
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
