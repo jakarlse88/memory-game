@@ -1,4 +1,4 @@
-// All of the cards
+// Card data
 const listOfCards = [
   {
     name: 'One',
@@ -82,14 +82,6 @@ const listOfCards = [
   }
 ];
 
-console.log(listOfCards);
-
-// All of the card things
-function cardEvents() {
-  flipCard();
-  displayCards();
-}
-
 // Display cards on the page
 function displayCards() {
   // Shuffle the list of cards using the provided "shuffle" method below
@@ -130,38 +122,88 @@ function shuffle(array) {
     return array;
 }
 
-// Show/hide card on click
-function flipCard() {
-  const cards = document.getElementsByClassName('card');
+// Event listener for card
+function cardEvents(evt) {
+  // "Open" and "finished" cards
+  const finishedCards = [];
+  const openCards = [];
 
-  for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener('click', function(evt) {
+  // Show clicked card's symbol and add to list of open cards
+  showCard(evt);
+  // Add clicked card to open cards list
+  addToList(openCards, evt.target);
 
-      if (this.firstElementChild.classList.contains('hide')) {
-        this.firstElementChild.classList.remove('hide');
-      } else  {
-        this.firstElementChild.classList.add('hide');
-      }
+  // A card is already open
+  if (openCards.length > 1) {
+    // Open cards match
+    if (openCards[0].name === openCards[1].name) {
+      addToList(finishedCards, openCards[0]);
+      addToList(finishedCards, openCards[1]);
 
-      if (this.lastElementChild.classList.contains('hide')) {
-        this.lastElementChild.classList.remove('hide');
-      } else {
-        this.lastElementChild.classList.add('hide');
-      }
-    });
+      openCards.shift();
+      openCards.shift();
+    } else {
+      // No match; hide cards...
+      const firstCard = document.querySelector(openCards[0].id);
+      firstCard.firstElementChild.classList.add('hide');
+      firstCard.lastElementChild.classList.remove('hide');
+
+      const secondCard = document.querySelector(openCards[1].id);
+      secondCard.lastElementChild.classList.add('hide');
+      secondCard.lastElementChild.classList.remove('hide');
+
+      // ... and clear list of opens
+      openCards.shift();
+      openCards.shift();
+    }
+
+    // Increment and display move counter
+    incrementMoves();
+
+    // If all cards are matched, display message with final score
+    if (finishedCards.length === 15) {
+      // Access modal, close button
+      const modal = document.querySelector('#winModal');
+      const closeBtn = document.querySelector('#closeBtn');
+
+      // Close window on button click
+      closeBtn.addEventListener('click', function(evt) {
+        modal.style.display = 'none';
+      });
+
+      // Close window on click anywhere outside modal
+      window.addEventListener('click', function(evt)) {
+        if (event.target != modal) {
+          modal.style.display = 'none';
+        }
+      };
+    }
   }
 }
 
-// Invoke events
-cardEvents();
+// Show clicked card's symbol
+function showCard(evt) {
+  if (this.firstElementChild.classList.contains('hide') &&
+      !this.lastElementChild.classList.contains('hide')) {
+    this.firstElementChild.classList.remove('hide');
+    this.lastElementChild.classList.add('hide');
+  }
+}
 
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
+// Hide specified card's symbol
+// TODO: implement
+function hideCard(evt) {
+}
+
+// Add given card to given list
+function addToList(list, card) {
+  list.push(card.id);
+}
+
+// Increment move counter and publish
+function incrementMoves() {
+  const container = document.querySelector('#moves').firstElementChild;
+  let moves = parseInt(container.innerText);
+  moves++;
+  container.innerText = moves;
+}

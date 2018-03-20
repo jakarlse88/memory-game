@@ -19,7 +19,7 @@
       <!-- Game info, reset button -->
       <div="game-info">
         <ul>
-          <li>Moves</li>
+          <li class="moves" id="moves">Moves: <span>0</span></li>
           <li>Rating</li>
           <li>Reset</li>
         </ul>
@@ -127,6 +127,23 @@
     <footer class="site-footer">
       </p>Jon Karlsen, 2018</p>
     </footer>
+
+    <!-- Win message -->
+    <!-- #TODO: style -->
+    <div id="winModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>A winner is you!</p>
+        </div>
+        <div class="modal-body">
+          <span class="close" id="closeBtn">&times;</span>
+          <p>勝利</p>
+        </div>
+        <div class="modal-footer">
+          <p class="finalScore">Final score: <span> </span></p>
+        </div>
+      </div>
+    </div>
 
     <script src="js/app.js"></script>
   </body>
