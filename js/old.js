@@ -1,6 +1,5 @@
 // All of the cards
-const listOfCards = [
-  {
+const listOfCards = [{
     name: 'One',
     image: 'kanji_1.svg',
     id: 'one'
@@ -98,8 +97,8 @@ function displayCards() {
 
   for (let i = 0; i < listOfCards.length; i++) {
     cardHTML.push('<img src="img/symbols/' + listOfCards[i].image + '"' +
-                  ' id="' + listOfCards[i].id + '"' +
-                  ' alt="' + listOfCards[i].name + '">');
+      ' id="' + listOfCards[i].id + '"' +
+      ' alt="' + listOfCards[i].name + '">');
   }
   console.log(cardHTML);
 
@@ -115,17 +114,18 @@ function displayCards() {
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+  var currentIndex = array.length,
+    temporaryValue, randomIndex;
 
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
 
-    return array;
+  return array;
 }
 
 // Show/hide card on click
@@ -137,7 +137,7 @@ function flipCard() {
 
       if (this.firstElementChild.classList.contains('hide')) {
         this.firstElementChild.classList.remove('hide');
-      } else  {
+      } else {
         this.firstElementChild.classList.add('hide');
       }
 

@@ -82,6 +82,9 @@ const listOfCards = [
   }
 ];
 
+// Card containers
+const containers = document.getElementsByClassName('card');
+
 // Display cards on the page
 function displayCards() {
   // Shuffle the list of cards using the provided "shuffle" method below
@@ -97,12 +100,8 @@ function displayCards() {
   }
   console.log(cardHTML);
 
-  // Add each card's HTML to the page
-  const cardContainers = document.getElementsByClassName('card');
-  console.log(cardContainers);
-
-  for (let i = 0; i < cardContainers.length; i++) {
-    cardContainers[i].firstElementChild.innerHTML = cardHTML[i];
+  for (let i = 0; i < containers.length; i++) {
+    containers[i].firstElementChild.innerHTML = cardHTML[i];
   }
 
 }
@@ -129,7 +128,7 @@ function cardEvents(evt) {
   const openCards = [];
 
   // Show clicked card's symbol and add to list of open cards
-  showCard(evt);
+  showCard(evt.target);
   // Add clicked card to open cards list
   addToList(openCards, evt.target);
 
@@ -172,17 +171,17 @@ function cardEvents(evt) {
       });
 
       // Close window on click anywhere outside modal
-      window.addEventListener('click', function(evt)) {
+      window.addEventListener('click', function(evt) {
         if (event.target != modal) {
           modal.style.display = 'none';
         }
-      };
+      });
     }
   }
 }
 
 // Show clicked card's symbol
-function showCard(evt) {
+function showCard() {
   if (this.firstElementChild.classList.contains('hide') &&
       !this.lastElementChild.classList.contains('hide')) {
     this.firstElementChild.classList.remove('hide');
@@ -207,3 +206,15 @@ function incrementMoves() {
   moves++;
   container.innerText = moves;
 }
+
+// Make stuff happen
+function soItBegins() {
+  displayCards();
+
+  const main = document.querySelector('#gameBoard');
+  main.addEventListener('click', function(event) {
+
+  });
+}
+
+soItBegins();

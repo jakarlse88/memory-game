@@ -1,139 +1,141 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <title>Jon's Memory Game</title>
-  </head>
-  <body>
 
-    <!-- Header -->
-    <header class="page-header">
-      <!-- Site title -->
-      <div class="title">
-        <h1>Memory Game</h1>
-      </div>
-      <!-- Game info, reset button -->
-      <div="game-info">
-        <ul>
-          <li class="moves" id="moves">Moves: <span>0</span></li>
-          <li>Rating</li>
-          <li>Reset</li>
-        </ul>
-      </div>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <title>Jon's Memory Game</title>
+</head>
 
-    <main>
-      <!-- Game board -->
-      <section class="page-wrapper flex-container">
-        <!-- First row of card containers -->
-        <section class="container__first-row">
-          <!-- First card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Second card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Third card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Fourth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-        </section>
-        <!-- Second row of card containers -->
-        <div class="container__second-row">
-          <!-- Fifth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Sixth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Seventh card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Eighth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
+<body>
+
+  <!-- Header -->
+  <header class="page-header">
+    <!-- Site title -->
+    <div class="title">
+      <h1>Memory Game</h1>
+    </div>
+    <!-- Game info, reset button -->
+    <div="game-info">
+      <ul>
+        <li class="moves" id="moves">Moves: <span>0</span></li>
+        <li>Rating</li>
+        <li>Reset</li>
+      </ul>
+      </div>
+  </header>
+
+  <main id="gameBoard">
+    <!-- Game board -->
+    <section class="page-wrapper flex-container">
+      <!-- First row of card containers -->
+      <section class="container__first-row">
+        <!-- First card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
         </div>
-        <!-- Third row of card containers -->
-        <div class="container__third-row">
-          <!-- Ninth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Tenth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Eleventh card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Twelfth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
+        <!-- Second card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
         </div>
-        <!-- Fourth row of card containers -->
-        <div class="container__fourth-row">
-          <!-- Thirteenth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Fourteenth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Fifteenth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
-          <!-- Sixteenth card container -->
-          <div class="card">
-            <figure class="front hide"></figure>
-            <figure class="back"></figure>
-          </div>
+        <!-- Third card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Fourth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
         </div>
       </section>
-    </main>
+      <!-- Second row of card containers -->
+      <div class="container__second-row">
+        <!-- Fifth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Sixth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Seventh card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Eighth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+      </div>
+      <!-- Third row of card containers -->
+      <div class="container__third-row">
+        <!-- Ninth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Tenth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Eleventh card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Twelfth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+      </div>
+      <!-- Fourth row of card containers -->
+      <div class="container__fourth-row">
+        <!-- Thirteenth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Fourteenth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Fifteenth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+        <!-- Sixteenth card container -->
+        <div class="card">
+          <figure class="front hide"></figure>
+          <figure class="back"></figure>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <footer class="site-footer">
-      </p>Jon Karlsen, 2018</p>
-    </footer>
+  <footer class="site-footer">
+    </p>Jon Karlsen, 2018</p>
+  </footer>
 
-    <!-- Win message -->
-    <!-- #TODO: style -->
-    <div id="winModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>A winner is you!</p>
+  <!-- Win message -->
+  <!-- #TODO: style -->
+  <div id="winModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>A winner is you!</p>
         </div>
         <div class="modal-body">
           <span class="close" id="closeBtn">&times;</span>
@@ -145,6 +147,6 @@
       </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="js/temp.js"></script>
   </body>
 </html>
