@@ -94,9 +94,7 @@ $(function() {
                 }
 
                 // Clear openCards
-                while (openCards.length >= 1) {
-                    openCards.shift();
-                }
+                clearOpen();
             }
         }
     });
