@@ -73,8 +73,7 @@ $(function() {
                 !openCards[0].is($(this))) {
                 
                 // Add cards to finishedCards
-                finishedCards.push(openCards[0]);
-                finishedCards.push($(this));
+                addToFinished($(this), openCards[0]);
 
                 // Clear openCards
                 while (openCards.length >= 1) {
@@ -145,6 +144,11 @@ function showCard(e) {
 
 // Add card to list of "open" cards
 function addToOpen(e) {
-    // openCards.push($(this).find('img').attr('alt'));
     openCards.push($(this));
+}
+
+// Add cards to list of "finished" cards
+function addToFinished(cardOne, cardTwo) {
+    finishedCards.push(cardOne);
+    finishedCards.push(cardTwo);
 }
