@@ -81,15 +81,9 @@ $(function() {
             // Cards do not match
             else { 
                 // Hide cards
-                if (!$(this).children('.front').hasClass('hide') &&
-                    $(this).children('.back').hasClass('hide')) {
-                        hideCard($(this));
-                    }
-                if (!openCards[0].children('.front').hasClass('hide') &&
-                openCards[0].children('.back').hasClass('hide')) {
-                    hideCard(openCards[0]);
-                }
-
+                hideCard($(this));
+                hideCard(openCards[0]);
+                
                 // Clear openCards
                 clearOpen();
             }
@@ -142,8 +136,20 @@ function addToOpen(e) {
 
 // Add cards to list of "finished" cards
 function addToFinished(cardOne, cardTwo) {
-    finishedCards.push(cardOne);
-    finishedCards.push(cardTwo);
+    let existsInList = false;
+    
+    for (let i = 0; i < finishedCards.length; i++) {
+        if ($(finishedCards[i]).find('img').attr('alt') === $(cardOne).find('img').attr('alt')||
+            $(finishedCards[i]).find('img').attr('alt') === $(cardTwo).find('img').attr('alt')) {
+            
+                existsInList = true;
+        }
+    }
+    
+    if (!existsInList) {
+        finishedCards.push(cardOne);
+        finishedCards.push(cardTwo);
+    }
 }
 
 // Clear list of "open" cards
