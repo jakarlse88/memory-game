@@ -68,8 +68,10 @@ $(function() {
     // Display card symbol
     $('.card').click(showCard);
     
-    // Add card to list of "open" cards
+    // Add to list of open cards
     $('.card').click(addToOpen);
+
+    // If there is already an open card in the list...
 })
 
 /*
