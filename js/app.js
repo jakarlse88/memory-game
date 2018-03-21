@@ -76,9 +76,7 @@ $(function() {
                 addToFinished($(this), openCards[0]);
 
                 // Clear openCards
-                while (openCards.length >= 1) {
-                    openCards.shift();
-                }
+                clearOpen();
             } 
             // Cards do not match
             else if ($(openCards)[0].find('img').attr('alt') !== $(this).find('img').attr('alt') ||
@@ -151,4 +149,11 @@ function addToOpen(e) {
 function addToFinished(cardOne, cardTwo) {
     finishedCards.push(cardOne);
     finishedCards.push(cardTwo);
+}
+
+// Clear list of "open" cards
+function clearOpen() {
+    while (openCards.length >= 1) {
+        openCards.shift();
+    }
 }
