@@ -30,6 +30,9 @@ const cardHTML = [];
 // Array containing "open" cards
 const openCards = [];
 
+// Array containing "finished" cards
+const finishedCards = [];
+
 /*
  *
  * Logic
@@ -65,14 +68,21 @@ $(function() {
     // check for match
     $('.card').click(function() {
         if (openCards.length > 1) {
+            // Cards match 
             if ($(openCards)[0].find('img').attr('alt') === $(this).find('img').attr('alt') &&
                 !openCards[0].is($(this))) {
                 
-                console.log('Equality!'); // Debug
+                // Add cards to finishedCards
+                finishedCards.push(openCards[0]);
+                finishedCards.push($(this));
+
+                // Clear openCards
+                while (openCards.length >= 1) {
+                    openCards.shift();
+                }
             }
         }
     });
-    
 })
 
 /*
