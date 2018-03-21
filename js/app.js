@@ -44,9 +44,15 @@ $(function() {
     shuffle(cards);
 
     // Create card HTML
-    cardHTML = createCardHTML(cards);
+    createCardHTML(cards);
 
-    // Add card HTML to page
+    // Add each card to page
+    let counter = 0;
+
+    $('.card').each(function() {
+        $(this).children(".front").prepend(cardHTML[counter]);
+        counter++;
+    });
 })
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -82,11 +88,7 @@ function shuffle(array) {
 
 // Create card HTML
 function createCardHTML(array) {
-    const cardHTML = [];
-
     for (let i = 0; i < cards.length; i++) {
-        cardHTML[i] = `img/symbols/${array[i]}`;
+        cardHTML[i] = `<img/symbols/${array[i]}>`;
     }
-
-    return cardHTML;
 }
