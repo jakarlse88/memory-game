@@ -1,7 +1,3 @@
-/*
- * Create a list that holds all of your cards
- */
-
 
 /*
  * Display the cards on the page
@@ -30,6 +26,17 @@
  * 
  */
 
+// List holding all cards
+const cards = [
+    'kanji_1.svg',
+    'kanji_2.svg',
+    'kanji_3.svg',
+    'kanji_4.svg',
+    'kanji_5.svg',
+    'kanji_6.svg',
+    'kanji_7.svg',
+    'kanji_8.svg',
+];
 
 /*
  *
@@ -38,13 +45,14 @@
  */
 
 
+
 /*
  *
  * Functions
  * 
  */
 
-  // Shuffle function from http://stackoverflow.com/a/2450976
+// Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
