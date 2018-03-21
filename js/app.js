@@ -80,6 +80,26 @@ $(function() {
                 while (openCards.length >= 1) {
                     openCards.shift();
                 }
+            } 
+            // Cards do not match
+            else if ($(openCards)[0].find('img').attr('alt') !== $(this).find('img').attr('alt') ||
+            openCards[0].is($(this))) { 
+                // Hide cards
+                if (!$(this).children('.front').hasClass('hide') &&
+                    $(this).children('.back').hasClass('hide')) {
+                        $(this).children('.front').toggleClass('hide');
+                        $(this).children('.back').toggleClass('hide');
+                    }
+                if (!openCards[0].children('.front').hasClass('hide') &&
+                openCards[0].children('.back').hasClass('hide')) {
+                    openCards[0].children('.front').toggleClass('hide');
+                    openCards[0].children('.back').toggleClass('hide');
+                }
+
+                // Clear openCards
+                while (openCards.length >= 1) {
+                    openCards.shift();
+                }
             }
         }
     });
@@ -119,7 +139,7 @@ function showCard(e) {
     if ($(this).children('.front').hasClass('hide') &&
         !$(this).children('.back').hasClass('hide')) {
             $(this).children('.front').toggleClass('hide');
-        $(this).children('.back').toggleClass('hide');
+            $(this).children('.back').toggleClass('hide');
     }
 }
 

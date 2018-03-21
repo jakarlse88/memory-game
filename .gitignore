@@ -3,4 +3,4 @@
 .stylelintrc
 .eslintrc.json
 js-old
-js/*.txt
+js/*.md
