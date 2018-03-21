@@ -61,11 +61,7 @@ $(function() {
  */
 // Card event listener
 $(function() {
-    $('.card').click(function(evt) {
-        $(this).children('.front').toggleClass('hide');
-        $(this).children('.back').toggleClass('hide');
-        
-    });
+    $('.card').click(showCard);
 })
 
 /*
@@ -93,5 +89,14 @@ function shuffle(array) {
 function createCardHTML(array) {
     for (let i = 0; i < cards.length; i++) {
         cardHTML[i] = `<img src="img/symbols/${array[i]}">`;
+    }
+}
+
+// Show card symbol
+function showCard(e) {
+    if ($(this).children('.front').hasClass('hide') &&
+        !$(this).children('.back').hasClass('hide')) {
+            $(this).children('.front').toggleClass('hide');
+        $(this).children('.back').toggleClass('hide');
     }
 }
