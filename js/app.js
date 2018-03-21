@@ -68,10 +68,8 @@ $(function() {
     // Display card symbol
     $('.card').click(showCard);
     
-    // // Add card to list of "open" cards
-    // $('.card').click(function() {
-
-    // })
+    // Add card to list of "open" cards
+    $('.card').click(addToOpen);
 })
 
 /*
@@ -110,4 +108,9 @@ function showCard(e) {
             $(this).children('.front').toggleClass('hide');
         $(this).children('.back').toggleClass('hide');
     }
+}
+
+// Add card to list of "open" cards
+function addToOpen(e) {
+    openCards.push($(this).find('img').attr('alt'));
 }
