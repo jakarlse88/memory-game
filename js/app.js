@@ -4,27 +4,31 @@
  * 
  */
 
-// List holding all cards
+// Array containing all cards
 const cards = [
-    'kanji_1.svg',
-    'kanji_2.svg',
-    'kanji_3.svg',
-    'kanji_4.svg',
-    'kanji_5.svg',
-    'kanji_6.svg',
-    'kanji_7.svg',
-    'kanji_8.svg',
-    'kanji_1.svg',
-    'kanji_2.svg',
-    'kanji_3.svg',
-    'kanji_4.svg',
-    'kanji_5.svg',
-    'kanji_6.svg',
-    'kanji_7.svg',
-    'kanji_8.svg'
-    ];
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8'
+];
 
+// Array containing card HTML
 const cardHTML = [];
+
+// Array containing "open" cards
+const openCards = [];
 
 /*
  *
@@ -61,7 +65,13 @@ $(function() {
  */
 // Card event listener
 $(function() {
+    // Display card symbol
     $('.card').click(showCard);
+    
+    // // Add card to list of "open" cards
+    // $('.card').click(function() {
+
+    // })
 })
 
 /*
@@ -88,11 +98,12 @@ function shuffle(array) {
 // Create card HTML
 function createCardHTML(array) {
     for (let i = 0; i < cards.length; i++) {
-        cardHTML[i] = `<img src="img/symbols/${array[i]}">`;
+        cardHTML[i] = `<img src="img/symbols/kanji_${array[i]}.svg"
+                        alt="${array[i]}">`;
     }
 }
 
-// Show card symbol
+// Display card symbol
 function showCard(e) {
     if ($(this).children('.front').hasClass('hide') &&
         !$(this).children('.back').hasClass('hide')) {
