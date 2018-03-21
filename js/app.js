@@ -53,16 +53,6 @@ $(function() {
     });
 })
 
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
 // Card event listener
 $(function() {
     // Display card symbol
@@ -71,7 +61,18 @@ $(function() {
     // Add to list of open cards
     $('.card').click(addToOpen);
 
-    // If there is already an open card in the list...
+    // If there is already an open card in the list,
+    // check for match
+    $('.card').click(function() {
+        if (openCards.length > 1) {
+            if ($(openCards)[0].find('img').attr('alt') === $(this).find('img').attr('alt') &&
+                !openCards[0].is($(this))) {
+                
+                console.log('Equality!'); // Debug
+            }
+        }
+    });
+    
 })
 
 /*
@@ -114,5 +115,6 @@ function showCard(e) {
 
 // Add card to list of "open" cards
 function addToOpen(e) {
-    openCards.push($(this).find('img').attr('alt'));
+    // openCards.push($(this).find('img').attr('alt'));
+    openCards.push($(this));
 }
