@@ -14,7 +14,17 @@ const cards = [
     'kanji_6.svg',
     'kanji_7.svg',
     'kanji_8.svg',
-];
+    'kanji_1.svg',
+    'kanji_2.svg',
+    'kanji_3.svg',
+    'kanji_4.svg',
+    'kanji_5.svg',
+    'kanji_6.svg',
+    'kanji_7.svg',
+    'kanji_8.svg'
+    ];
+
+const cardHTML = [];
 
 /*
  *
@@ -28,7 +38,16 @@ const cards = [
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+// Display cards to page
+$(function() {
+    // Shuffle "deck"
+    shuffle(cards);
 
+    // Create card HTML
+    cardHTML = createCardHTML(cards);
+
+    // Add card HTML to page
+})
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -59,4 +78,15 @@ function shuffle(array) {
     }
 
     return array;
+}
+
+// Create card HTML
+function createCardHTML(array) {
+    const cardHTML = [];
+
+    for (let i = 0; i < cards.length; i++) {
+        cardHTML[i] = `img/symbols/${array[i]}`;
+    }
+
+    return cardHTML;
 }
