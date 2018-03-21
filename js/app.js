@@ -32,12 +32,6 @@ const cardHTML = [];
  * 
  */
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
 // Display cards to page
 $(function() {
     // Shuffle "deck"
@@ -54,6 +48,7 @@ $(function() {
         counter++;
     });
 })
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
