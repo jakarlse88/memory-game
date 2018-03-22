@@ -138,14 +138,8 @@ function checkForMatch(e) {
 
 function checkFinished() {
     // All cards matched
-    
     if (finishedCards.length === 16) {
-        console.log('a winner is you!');
         $('.modal').css('display', 'block');
-        
-    } else {
-        console.log('a winner isn\'t you');
-    }
 }
 
 /*
