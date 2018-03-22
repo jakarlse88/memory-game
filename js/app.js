@@ -107,7 +107,7 @@ function hideCard(card) {
     $(card).children('.back').toggleClass('hide');
 }
 
-    
+// Check for card match
 function checkForMatch(e) {
     if (openCards.length > 1) {
         // Cards match 
@@ -136,6 +136,7 @@ function checkForMatch(e) {
     $('#move-counter').text(++moveCounter);
 }
 
+// Check for game finish
 function checkFinished() {
     // All cards matched
     if (finishedCards.length === 16) {
