@@ -80,12 +80,15 @@ $(function() {
             } 
             // Cards do not match
             else { 
-                // Hide cards
-                hideCard($(this));
-                hideCard(openCards[0]);
-                
-                // Clear openCards
-                clearOpen();
+                // TODO: de-bug. 
+                setTimeout(function() {
+                    // Hide cards
+                    hideCard($(this));
+                    hideCard(openCards[0]);
+                    
+                    // Clear openCards
+                    clearOpen();    
+                }, 100);
             }
         }
     });

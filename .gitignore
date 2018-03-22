@@ -2,5 +2,5 @@
 .htmlhintrc
 .stylelintrc
 .eslintrc.json
-js-old
-js/*.md
+*.md
+/js-old
