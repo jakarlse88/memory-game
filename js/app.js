@@ -107,6 +107,47 @@ function hideCard(card) {
     $(card).children('.back').toggleClass('hide');
 }
 
+    
+function checkForMatch(e) {
+    if (openCards.length > 1) {
+        // Cards match 
+        if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt') &&
+            !$(this).is(openCards[0])) {
+            console.log(`card match`); // debug
+
+            // Add cards to finishedCards
+            addToFinished(this);
+            addToFinished(openCards[0]);
+
+            // Clear openCards
+            clearOpen();
+        }
+        // Cards do not match
+        else {
+            console.log(`card non-match`); // debug
+
+            hideCard(openCards[0]);
+            hideCard(this);
+
+            clearOpen();
+        }
+    }
+    // Increment and display moveCounter
+    $('#move-counter').text(++moveCounter);
+}
+
+function checkFinished() {
+    // All cards matched
+    
+    if (finishedCards.length === 16) {
+        console.log('a winner is you!');
+        $('.modal').css('display', 'block');
+        
+    } else {
+        console.log('a winner isn\'t you');
+    }
+}
+
 /*
  *
  * Logic
@@ -140,32 +181,15 @@ $(function () {
 
     // Card match/mismatch logic
     $('.card').click(checkForMatch);
+
+    $('.card').click(checkFinished);
+
+    
 })
 
-function checkForMatch(e) {
-    if (openCards.length > 1) {
-        // Cards match 
-        if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt') &&
-            !$(this).is(openCards[0])) {
-            console.log(`card match`); // debug
-
-            // Add cards to finishedCards
-            addToFinished(this);
-            addToFinished(openCards[0]);
-
-            // Clear openCards
-            clearOpen();
-        }
-        // Cards do not match
-        else {
-            console.log(`card non-match`); // debug
-
-            hideCard(openCards[0]);
-            hideCard(this);
-
-            clearOpen();
-        }
-    }
-    // Increment and display moveCounter
-    $('#move-counter').text(++moveCounter);
-}
+// Modal close button event listener
+$(function () {
+    $('#closeBtn').click(function() {
+        $('.modal').css('display', 'none');
+    });
+})
