@@ -140,6 +140,7 @@ function checkFinished() {
     // All cards matched
     if (finishedCards.length === 16) {
         $('.modal').css('display', 'block');
+    }
 }
 
 /*
@@ -177,8 +178,6 @@ $(function () {
     $('.card').click(checkForMatch);
 
     $('.card').click(checkFinished);
-
-    
 })
 
 // Modal close button event listener
