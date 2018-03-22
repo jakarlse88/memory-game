@@ -137,37 +137,31 @@ $(function () {
 
     // If there is already an open card in the list,
     // check for match
-    $('.card').click(function () {
-        if (openCards.length > 1) {
-            // Cards match 
-            if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt') &&
-                !$(openCards[0]).is(this)) {
-
-                // Add cards to finishedCards
-                addToFinished(this);
-                addToFinished(openCards[0]);
-
-                // Clear openCards
-                clearOpen();
-            }
-            // Cards do not match
-            else {
-                console.log(`card non-match`); // debug
-                // console.log(this);
-
-                hideCard(openCards[0]);
-                hideCard(this);
-
-                clearOpen();
-                // setTimeout(function() {
-                //     // Hide cards
-                //     hideCard($(this));
-                //     hideCard(openCards[0]);
-
-                //     // Clear openCards
-                //     clearOpen();    
-                // }, 100);
-            }
-        }
-    });
+    $('.card').click(checkForMatch);
 })
+
+function checkForMatch(e) {
+    if (openCards.length > 1) {
+        // Cards match 
+        if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt') &&
+            !$(this).is(openCards[0])) {
+            console.log(`card match`); // debug
+
+            // Add cards to finishedCards
+            addToFinished(this);
+            addToFinished(openCards[0]);
+
+            // Clear openCards
+            clearOpen();
+        }
+        // Cards do not match
+        else {
+            console.log(`card non-match`); // debug
+
+            hideCard(openCards[0]);
+            hideCard(this);
+
+            clearOpen();
+        }
+    }
+}
