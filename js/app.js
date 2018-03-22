@@ -33,6 +33,9 @@ const openCards = [];
 // Array containing "finished" cards
 const finishedCards = [];
 
+// Move counter
+let moveCounter = 0;
+
 /*
  *
  * Functions
@@ -135,8 +138,7 @@ $(function () {
     // Add to list of open cards
     $('.card').click(addToOpen);
 
-    // If there is already an open card in the list,
-    // check for match
+    // Card match/mismatch logic
     $('.card').click(checkForMatch);
 })
 
@@ -164,4 +166,6 @@ function checkForMatch(e) {
             clearOpen();
         }
     }
+    // Increment and display moveCounter
+    $('#move-counter').text(++moveCounter);
 }
