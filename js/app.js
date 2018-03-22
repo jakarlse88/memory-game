@@ -35,6 +35,14 @@ const finishedCards = [];
 
 /*
  *
+ * Flags
+ * 
+ */
+
+let previousCardOpen = false;
+
+/*
+ *
  * Logic
  * 
  */
@@ -66,30 +74,40 @@ $(function() {
 
     // If there is already an open card in the list,
     // check for match
-    $('.card').click(function() {
-        if (openCards.length > 1) {
+    $('.card').click(function(e) {
+        if (previousCardOpen) {
             // Cards match 
             if ($(openCards)[0].find('img').attr('alt') === $(this).find('img').attr('alt') &&
                 !openCards[0].is($(this))) {
-                
+                console.log(`${$(openCards)[0].find('img').attr('alt')} and ${$(this).find('img').attr('alt')} are a match!`);
+
                 // Add cards to finishedCards
                 addToFinished($(this), openCards[0]);
 
                 // Clear openCards
                 clearOpen();
+                previousCardOpen = false;
             } 
             // Cards do not match
-            else { 
-                // TODO: de-bug. 
-                setTimeout(function() {
-                    // Hide cards
-                    hideCard($(this));
-                    hideCard(openCards[0]);
+            else {
+                console.log(`card non-match`); // debug
+                console.log($(this));
+
+                hideCard(openCards[0]);
+                hideCard($(this));
+
+                previousCardOpen = false;
+                // setTimeout(function() {
+                //     // Hide cards
+                //     hideCard($(this));
+                //     hideCard(openCards[0]);
                     
-                    // Clear openCards
-                    clearOpen();    
-                }, 100);
+                //     // Clear openCards
+                //     clearOpen();    
+                // }, 100);
             }
+        } else {
+            previousCardOpen = true;
         }
     });
 })
