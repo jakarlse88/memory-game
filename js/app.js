@@ -124,10 +124,11 @@ function checkForMatch(e) {
         }
         // Cards do not match
         else {
-            hideCard(openCards[0]);
-            hideCard(this);
-
-            clearOpen();
+            setTimeout(function() {
+                hideCard(openCards[0]);
+                hideCard(openCards[1]);
+                clearOpen();
+            }, 500);
         }
     }
     incrementMoveCounter();
