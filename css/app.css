@@ -70,6 +70,10 @@ body {
   margin: 1% 0 0;
 }
 
+.rating {
+  width: 150px;
+}
+
 .btn {
   color: #fff;
   background-color: #000d12;
