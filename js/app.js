@@ -42,6 +42,12 @@ let timer = 0;
 // Timer ID
 let timerId;
 
+// Star rating
+let stars = 3;
+
+// Star ID
+let starId;
+
 /*
  *
  * Functions
@@ -171,6 +177,22 @@ function startGameTimer() {
         $('#game-timer').text(++timer)}, 1000);
 }
 
+// Update rating
+function updateStars() {
+    starId = setInterval(function() {
+        // 0-20 seconds: 3 stars
+        if (timer >= 0 && timer <= 20) {
+            stars = 3;
+        } else if (timer >= 21 && timer <= 40) { // 21-40 seconds: 2 stars
+            stars = 2;
+            $('#secondStar').remove();
+        } else {// 41-60 seconds: 1 star
+            stars = 1;
+            $('#thirdStar').remove();
+        }
+    }, 500);
+}
+
 /*
  *
  * Logic
@@ -224,4 +246,9 @@ $(function() {
     $('#playAgain-btn').on('click', function() {
         location.reload();
     })
+})
+
+// Rating tracker
+$(function() {
+    updateStars();
 })
