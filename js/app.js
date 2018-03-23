@@ -217,3 +217,10 @@ $(function() {
         clearInterval(timerId);
     });
 })
+
+// Reset button
+$(function() {
+    $('#reset-btn').on('click', function() {
+        location.reload();
+    })
+})
