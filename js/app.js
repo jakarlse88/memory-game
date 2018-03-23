@@ -113,7 +113,6 @@ function checkForMatch(e) {
         // Cards match 
         if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt') &&
             !$(this).is(openCards[0])) {
-            console.log(`card match`); // debug
 
             // Add cards to finishedCards
             addToFinished(this);
@@ -124,16 +123,13 @@ function checkForMatch(e) {
         }
         // Cards do not match
         else {
-            console.log(`card non-match`); // debug
-
             hideCard(openCards[0]);
             hideCard(this);
 
             clearOpen();
         }
     }
-    // Increment and display moveCounter
-    $('#move-counter').text(++moveCounter);
+    incrementMoveCounter();
 }
 
 // Check for game finish
@@ -142,6 +138,11 @@ function checkFinished() {
     if (finishedCards.length === 16) {
         $('.modal').css('display', 'block');
     }
+}
+
+// Increment and display moveCounter
+function incrementMoveCounter() {
+    $('#move-counter').text(++moveCounter);
 }
 
 /*
