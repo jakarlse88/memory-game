@@ -41,8 +41,10 @@ body {
 }
 
 .title {
-  font-size: 3.5em;
+  font-size: 4em;
   margin: 1% auto;  
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 .game-info {
@@ -56,14 +58,27 @@ body {
   margin: 1% auto;
 }
 
-li {
+.game-info li {
   display: inline-block;
   text-align: center;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .btn {
+  color: #fff;
+  background-color: #000d12;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  padding: 10px 32px;
+  margin: 1em 1em 0;
+}
 
+.btn:hover {
+  background-color: black;
+  cursor: pointer;
 }
 
 /*
@@ -256,4 +271,7 @@ li {
 
 .site-footer {
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0 0 1em;
+  font-size: .8em;
 }
