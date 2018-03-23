@@ -109,6 +109,7 @@ function hideCard(card) {
 
 // Check for card match
 function checkForMatch(e) {
+    // A card is open
     if (openCards.length > 1) {
         // Cards match 
         if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt') &&
@@ -145,6 +146,16 @@ function incrementMoveCounter() {
     $('#move-counter').text(++moveCounter);
 }
 
+// Adds each card to the page
+function addCardsToPage() {
+    let counter = 0;
+
+    // Loop through each card container and add card HTML
+    $('.card').each(function () {
+        $(this).children(".front").prepend(cardHTML[counter]);
+        counter++;
+    });
+}
 /*
  *
  * Logic
@@ -153,19 +164,11 @@ function incrementMoveCounter() {
 
 // Display cards to page
 $(function () {
-    // Shuffle "deck"
     shuffle(cards);
 
-    // Create card HTML
     createCardHTML(cards);
 
-    // Add each card to page
-    let counter = 0;
-
-    $('.card').each(function () {
-        $(this).children(".front").prepend(cardHTML[counter]);
-        counter++;
-    });
+    addCardsToPage();
 })
 
 // Card event listener
