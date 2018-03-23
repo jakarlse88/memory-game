@@ -151,6 +151,7 @@ function checkFinished() {
     // All cards matched
     if (finishedCards.length === 16) {
         clearInterval(timerId);
+        $('#seconds').text(timer);
         $('.modal').css('display', 'block');
     }
 }
@@ -174,7 +175,7 @@ function addCardsToPage() {
 // Game timer 
 function startGameTimer() {
     timerId = setInterval(function() {
-        $('#game-timer').text(++timer)}, 1000);
+        $('#game-timer').text(++timer,)}, 1000);
 }
 
 // Update rating
