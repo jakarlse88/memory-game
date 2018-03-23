@@ -233,7 +233,7 @@ $(function () {
 
 // Game timer 
 $(function() {
-    $('#start-btn').one('click', startGameTimer);
+    $('.page-wrapper').one('click', startGameTimer);
 })
 
 // Reset button
