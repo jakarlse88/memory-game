@@ -1,10 +1,14 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
 /*
  *
  * Body
  *
  */
 
- @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body {
+  background-image: url('../img/sakura.png'); /* Background pattern from Subtle Patterns */
+}
 
 .page-wrapper {
   width: 70%;
