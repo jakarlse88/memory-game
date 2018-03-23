@@ -212,13 +212,6 @@ $(function() {
     $('#start-btn').one('click', startGameTimer);
 })
 
-// Stop button
-$(function() {
-    $('#stop-btn').on('click', function() {
-        clearInterval(timerId);
-    });
-})
-
 // Reset button
 $(function() {
     $('#reset-btn').on('click', function() {
