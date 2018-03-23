@@ -39,6 +39,9 @@ let moveCounter = 0;
 // Game timer
 let timer = 0;
 
+// Timer ID
+let timerId;
+
 /*
  *
  * Functions
@@ -141,7 +144,7 @@ function checkForMatch(e) {
 function checkFinished() {
     // All cards matched
     if (finishedCards.length === 16) {
-        clearInterval()
+        clearInterval(timerId);
         $('.modal').css('display', 'block');
     }
 }
@@ -163,8 +166,8 @@ function addCardsToPage() {
 }
 
 // Game timer 
-const gameTimer = function() {
-    setInterval(function() {
+function startGameTimer() {
+    timerId = setInterval(function() {
         $('#game-timer').text(++timer)}, 1000);
 }
 
@@ -206,5 +209,11 @@ $(function () {
 
 // Game timer 
 $(function() {
-    $('.card').click(gameTimer);
+    $('#start-btn').one('click', startGameTimer);
+})
+
+$(function() {
+    $('#stop-btn').on('click', function() {
+        clearInterval(timerId);
+    });
 })
