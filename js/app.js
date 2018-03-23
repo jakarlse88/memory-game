@@ -212,6 +212,7 @@ $(function() {
     $('#start-btn').one('click', startGameTimer);
 })
 
+// Stop button
 $(function() {
     $('#stop-btn').on('click', function() {
         clearInterval(timerId);
@@ -221,6 +222,13 @@ $(function() {
 // Reset button
 $(function() {
     $('#reset-btn').on('click', function() {
+        location.reload();
+    })
+})
+
+// Play again button
+$(function() {
+    $('#playAgain-btn').on('click', function() {
         location.reload();
     })
 })
