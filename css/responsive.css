@@ -6,11 +6,7 @@
 
     .game-info {
         font-size: 1.4em;
-    }
-
-    .rating {
-        width: 200px;
-    }
+    } 
 
     /* Footer */
     .site-footer {
@@ -23,13 +19,41 @@
     /* Body */
     .page-wrapper {
         width: 95%;
+        padding: 1%;
+    }
+
+    .game-info {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .page-header {
+        margin: 2% 0;
+    }
+    
+    .title {
+        font-size: 3em;
+        margin: 2% 0;
     }
 
     .game-info {
         font-size: 1em;
     }
 
-    #reset-btn {
-        float: leftst;
+    .card {
+        width: 68px;
+        height: calc(68px * 1.25);
+    }
+}
+
+@media screen and (max-width: 350px) {
+   .title {
+       font-size: 2em;
+   }
+   
+    .card {
+        width: 48px;
+        height: calc(48px * 1.25);
     }
 }

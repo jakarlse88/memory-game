@@ -40,7 +40,7 @@ body {
 
 .title {
   font-size: 4em;
-  margin: 1% auto 0;
+  margin: 1% auto;
   text-transform: uppercase;
   font-weight: 800;
 }
@@ -83,7 +83,7 @@ body {
   height: 125px;
   background-color: #000d12;
   border: 1px solid #000;
-  margin: 10px auto;
+  margin: 10px auto 0;
   cursor: pointer;
   padding: 2%;
 }
@@ -272,6 +272,10 @@ body {
 .site-footer {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
-  margin: 0 0 1em;
   font-size: .8em;
+  padding: 1%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
