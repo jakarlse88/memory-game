@@ -1,11 +1,12 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-/*
-  * White: #fff
-  * Rich black: #00171f
-  * Prussian blue: #003459
-  * Cerulean: #007ea7
-  * Vivid cerulean: 00a8e8
-  */
+/* 
+ * COLORS:
+ * White: #fff
+ * Rich black: #00171f
+ * Prussian blue: #003459
+ * Cerulean: #007ea7
+ * Vivid cerulean: 00a8e8
+ */
 
 /*
  *
@@ -14,8 +15,7 @@
  */
 
 body {
-  background-image: url("../img/diagmonds.png");
-  /* From https://www.toptal.com/designers/subtlepatterns/diagmonds/ */
+  background-image: url("../img/diagmonds.png"); /* From https://www.toptal.com/designers/subtlepatterns/diagmonds/ */
   color: #fff;
 }
 
@@ -88,12 +88,14 @@ body {
   padding: 2%;
 }
 
+/* Hidden state */
 .hide {
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;
 }
 
+/* Back of card */
 .back {
   width: 100%;
   height: 100%;
@@ -103,6 +105,7 @@ body {
   /* From https://www.toptal.com/designers/subtlepatterns/diagmonds/ */
 }
 
+/* Front of card */
 .front {
   width: 100%;
   height: 100%;
@@ -112,6 +115,7 @@ body {
   /* From https://www.toptal.com/designers/subtlepatterns/diagmonds/ */
 }
 
+/* Card symbol */
 .front img {
   max-height: 100%;
   max-width: 100%;
@@ -123,9 +127,7 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-}
-
-/* From: https://stackoverflow.com/a/18869078
+} /* From: https://stackoverflow.com/a/18869078
 
 /*
  *
@@ -138,6 +140,7 @@ body {
   flex-direction: column;
 }
 
+/* First row of card containers */
 .container__first-row {
   order: 0;
   display: flex;
@@ -145,6 +148,7 @@ body {
   flex-direction: row;
 }
 
+/* Second row of card containers */
 .container__second-row {
   order: 1;
   display: flex;
@@ -152,6 +156,7 @@ body {
   flex-direction: row;
 }
 
+/* Third row of card containers */
 .container__third-row {
   order: 2;
   display: flex;
@@ -159,6 +164,7 @@ body {
   flex-direction: row;
 }
 
+/* Fourth row of card containers */
 .container__fourth-row {
   order: 3;
   display: flex;
@@ -172,8 +178,8 @@ body {
   *
  */
 
-/* Modal background */
 
+/* Modal background */
 .modal {
   display: none;
   position: fixed;
@@ -236,17 +242,7 @@ body {
   right: 0;
 }
 
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0
-  }
-  to {
-    top: 0;
-    opacity: 1
-  }
-}
-
+/* Button style */
 .btn {
   color: #fff;
   background-color: #000d12;

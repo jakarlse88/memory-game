@@ -79,8 +79,10 @@ function createCardHTML(array) {
 
 // Display card symbol
 function showCard(e) {
+    // Validate that the card is face-down
     if ($(this).children('.front').hasClass('hide') &&
         !$(this).children('.back').hasClass('hide')) {
+        // Show front/hide back of card, animate
         $(this).children('.front').toggleClass('hide');
         $(this).children('.back').toggleClass('hide');
         $(this).children('.front').toggleClass('flip-in-hor-bottom');
@@ -89,7 +91,7 @@ function showCard(e) {
 
 // Add card to list of "open" cards
 function addToOpen(e) {
-    if (openCards.length < 2) {
+    if (openCards.length <= 2) {
         openCards.push(this);
     }
 }
@@ -98,12 +100,14 @@ function addToOpen(e) {
 function addToFinished(card) {
     let existsInList = false;
 
+    // Validate that card is not already in list
     for (let i = 0; i < finishedCards.length; i++) {
         if ($(finishedCards[i]).find('img').attr('alt') === $(this).find('img').attr('alt')) {
             existsInList = true;
         }
     }
 
+    // Add card
     if (!existsInList) {
         finishedCards.push(card);
     }
@@ -260,6 +264,7 @@ $(function () {
     updateStars();
 })
 
+// Card container animation
 $(function() {
     $('.card').toggleClass('bounce-in-top');
     $('.card').children('.back').toggleClass('bounce-in-top');
