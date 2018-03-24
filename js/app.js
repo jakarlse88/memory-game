@@ -186,12 +186,12 @@ function updateStars() {
             stars = 3;
         } else if (timer >= 21 && timer <= 40) { // 21-40 seconds: 2 stars
             stars = 2;
-            $('#secondStar').remove();
-            $('#modal-secondStar').remove();
+            $('#thirdStar').replaceWith('<i class="far fa-star">');
+            $('#modal-secondStar').replaceWith('<i class="far fa-star">');
         } else {// 41-60 seconds: 1 star
             stars = 1;
-            $('#thirdStar').remove();
-            $('#modal-thirdStar').remove();
+            $('#secondStar').replaceWith('<i class="far fa-star">');
+            $('#modal-thirdStar').replaceWith('<i class="far fa-star">');
         }
     }, 500);
 }
