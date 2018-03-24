@@ -24,8 +24,6 @@ body {
   margin: 0 auto;
   padding: 2% 0;
   border-radius: 10px;
-  /* background-color: #00171f; */
-  /* box-shadow: 0px 0px 8px black; */
 }
 
 /*
@@ -42,7 +40,7 @@ body {
 
 .title {
   font-size: 4em;
-  margin: 1% auto;
+  margin: 1% auto 0;
   text-transform: uppercase;
   font-weight: 800;
 }
@@ -55,7 +53,7 @@ body {
 }
 
 .game-info ul {
-  margin: 1% auto;
+  margin: 0 auto;
 }
 
 .game-info li {
@@ -70,23 +68,7 @@ body {
   margin: 1% 0 0;
 }
 
-.rating {
-  width: 150px;
-}
-
-.btn {
-  color: #fff;
-  background-color: #000d12;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 2px;
-  text-transform: uppercase;
-  padding: 10px 32px;
-  margin: 1em 1em 0;
-}
-
-.btn:hover {
-  background-color: black;
+#reset-btn:hover {
   cursor: pointer;
 }
 
