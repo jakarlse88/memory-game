@@ -8,10 +8,21 @@
         font-size: 1.4em;
     } 
 
+    /* Win-modal */
+    .modal-body {
+        font-size: 150px;
+    }
+
     /* Footer */
     .site-footer {
         font-size: 1em;
         margin: 0 0 auto;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .modal-body {
+        font-size: 100px;
     }
 }
 
@@ -45,9 +56,17 @@
         width: 68px;
         height: calc(68px * 1.25);
     }
+
+    .bracket {
+        display: none;
+    }
+
+    .modal-body {
+        text-orientation: upright;
+    }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 375px) {
    .title {
        font-size: 2em;
    }
@@ -56,4 +75,23 @@
         width: 48px;
         height: calc(48px * 1.25);
     }
+
+    .modal-body {
+        font-size: 75px;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .modal-footer {
+        height: 25%;
+    }
+
+    .modal-body {
+        font-size: 50px;
+    }
+
+    /* Final score text */
+    .fs-text {
+        display: none;
+    } 
 }

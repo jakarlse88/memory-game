@@ -218,13 +218,13 @@ body {
   padding: 2px 16px;
   font-family: 'Noto Sans Japanese', serif;
   font-weight: 500;
-  font-size: 200px;
+  font-size: 10em;
   text-align: center;
-  margin: auto;
+  margin: auto auto;
   position: absolute;
   left: 0;
   right: 0;
-  top: 16%;
+  top: 20%;
 }
 
 .modal-footer {
@@ -237,20 +237,6 @@ body {
   right: 0;
 }
 
-/* Close button */
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover, .close:focus {
-  color: grey;
-  text-decoration: none;
-  cursor: pointer;
-}
 
 @keyframes animatetop {
   from {
