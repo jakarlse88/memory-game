@@ -95,3 +95,18 @@
         display: none;
     } 
 }
+
+@media screen and (max-width: 250px) {
+    .game-info {
+        line-height: 1.5em;
+    }
+    
+    .card {
+        margin: 10px 4px 0 0;
+        width: 40px;
+    }
+    
+    .site-footer p {
+        font-size: .7em;
+    }
+}

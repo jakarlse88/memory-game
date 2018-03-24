@@ -227,13 +227,6 @@ $(function () {
     $('.card').click(checkFinished);
 })
 
-// Modal close button event listener
-$(function () {
-    $('#closeBtn').click(function() {
-        $('.modal').css('display', 'none');
-    });
-})
-
 // Game timer 
 $(function() {
     $('.page-wrapper').one('click', startGameTimer);

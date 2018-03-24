@@ -175,7 +175,7 @@ body {
 /* Modal background */
 
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -271,7 +271,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   font-size: .8em;
   padding: 1%;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
