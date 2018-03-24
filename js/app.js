@@ -259,3 +259,8 @@ $(function () {
 $(function () {
     updateStars();
 })
+
+$(function() {
+    $('.card').toggleClass('bounce-in-top');
+    $('.card').children('.back').toggleClass('bounce-in-top');
+})
