@@ -189,10 +189,9 @@ body {
 .modal-content {
   font-family: 'Quicksand', sans-serif;
   background-color: black;
-  color: rgba(255, 255, 255);
+  color: rgb(255, 255, 255);
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid black;
   width: 60%;
   height: 50%;
   position: relative;
@@ -396,7 +395,7 @@ body {
   }
   81% {
     transform: translateY(-28px);
-    -webkit-animation-timing-function: ease-in
+    animation-timing-function: ease-in
   }
   90% {
     transform: translateY(0);
