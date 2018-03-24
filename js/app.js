@@ -88,7 +88,9 @@ function showCard(e) {
 
 // Add card to list of "open" cards
 function addToOpen(e) {
-    openCards.push(this);
+    if (openCards.length < 2) {
+        openCards.push(this);
+    }
 }
 
 // Add cards to list of "finished" cards

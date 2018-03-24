@@ -175,7 +175,7 @@ body {
 /* Modal background */
 
 .modal {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -261,6 +261,17 @@ body {
     top: 0;
     opacity: 1
   }
+}
+
+.btn {
+  color: #fff;
+  background-color: #000d12;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  padding: 10px 32px;
+  margin: 1em 1em 0;
 }
 
 /*
