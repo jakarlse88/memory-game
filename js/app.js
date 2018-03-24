@@ -133,6 +133,10 @@ function checkForMatch(e) {
         if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt') &&
             !$(this).is(openCards[0])) {
 
+            // Match animation
+            $(this).children('.front').toggleClass('jello-horizontal');
+            $(openCards[0]).children('.front').toggleClass('jello-horizontal');
+
             // Add cards to finishedCards
             addToFinished(this);
             addToFinished(openCards[0]);
