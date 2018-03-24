@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/app.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+    crossorigin="anonymous"></script>
   <title>Jon's Memory Game</title>
 </head>
 
@@ -28,15 +29,17 @@
         <li class="moves" id="moves">
           <span id="move-counter">0</span> moves
         </li>
-        <li class="rating"> 
+        <li class="rating">
           <i class="fas fa-star" id="firstStar"></i>
           <i class="fas fa-star" id="secondStar"></i>
           <i class="fas fa-star" id="thirdStar"></i>
         </li>
-        <li>Time: <span id="game-timer">0</span></li>
+        <li>Time:
+          <span id="game-timer">0</span>
+        </li>
         <li id="reset-btn">
           <!-- Reset button -->
-            <i class="fas fa-redo"></i>
+          <i class="fas fa-redo"></i>
         </li>
       </ul>
     </div>
@@ -141,7 +144,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>Jon Karlsen, 2018</p>
+    <p>&copy;2018 Jon Karlsen</p>
   </footer>
 
   <!-- Win message -->
@@ -149,24 +152,27 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2>A winner is you!</p>
-        </div>
-        <div class="modal-body">
-          <p><span class="bracket">[</span>勝利<span class="bracket">]</span></p>
-        </div>
-        <div class="modal-footer">
-          <p class="finalScore">
-            <span class="fs-text">Final score: </span>
-            <span id="seconds">00</span>s |
-            <span id="stars">
-              <i class="fas fa-star" id="modal-firstStar"></i>
-              <i class="fas fa-star" id="modal-secondStar"></i>
-              <i class="fas fa-star" id="modal-thirdStar"></i>
-            </span> 
-          </p>
-          <button class="btn" id="playAgain-btn">Play Again</button>
-        </div>
+      </div>
+      <div class="modal-body">
+        <p>
+          <span class="bracket">[</span>勝利
+          <span class="bracket">]</span>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <p class="finalScore">
+          <span class="fs-text">Final score: </span>
+          <span id="seconds">00</span>s |
+          <span id="stars">
+            <i class="fas fa-star" id="modal-firstStar"></i>
+            <i class="fas fa-star" id="modal-secondStar"></i>
+            <i class="fas fa-star" id="modal-thirdStar"></i>
+          </span>
+        </p>
+        <button class="btn" id="playAgain-btn">Play Again</button>
       </div>
     </div>
-    
-  </body>
+  </div>
+
+</body>
 </html>

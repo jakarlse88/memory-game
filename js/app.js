@@ -81,8 +81,9 @@ function createCardHTML(array) {
 function showCard(e) {
     if ($(this).children('.front').hasClass('hide') &&
         !$(this).children('.back').hasClass('hide')) {
-            $(this).children('.front').toggleClass('hide');
-            $(this).children('.back').toggleClass('hide');
+        $(this).children('.front').toggleClass('hide');
+        $(this).children('.back').toggleClass('hide');
+        $(this).children('.front').toggleClass('flip-in-hor-bottom');
     }
 }
 
@@ -117,8 +118,11 @@ function clearOpen() {
 
 // Hide card symbol
 function hideCard(card) {
-    $(card).children('.front').toggleClass('hide');
-    $(card).children('.back').toggleClass('hide');
+    $(card).children('.front').toggleClass('wobble-hor-bottom');
+    setTimeout(function() {
+        $(card).children('.front').toggleClass('hide');
+        $(card).children('.back').toggleClass('hide');
+    }, 500);
 }
 
 // Check for card match
@@ -138,7 +142,7 @@ function checkForMatch(e) {
         }
         // Cards do not match
         else {
-            setTimeout(function() {
+            setTimeout(function () {
                 hideCard(openCards[0]);
                 hideCard(openCards[1]);
                 clearOpen();
@@ -176,13 +180,14 @@ function addCardsToPage() {
 
 // Game timer 
 function startGameTimer() {
-    timerId = setInterval(function() {
-        $('#game-timer').text(++timer,)}, 1000);
+    timerId = setInterval(function () {
+        $('#game-timer').text(++timer, )
+    }, 1000);
 }
 
 // Update rating
 function updateStars() {
-    starId = setInterval(function() {
+    starId = setInterval(function () {
         // 0-20 seconds: 3 stars
         if (timer >= 0 && timer <= 20) {
             stars = 3;
@@ -228,25 +233,25 @@ $(function () {
 })
 
 // Game timer 
-$(function() {
+$(function () {
     $('.page-wrapper').one('click', startGameTimer);
 })
 
 // Reset button
-$(function() {
-    $('#reset-btn').on('click', function() {
+$(function () {
+    $('#reset-btn').on('click', function () {
         location.reload();
     })
 })
 
 // Play again button
-$(function() {
-    $('#playAgain-btn').on('click', function() {
+$(function () {
+    $('#playAgain-btn').on('click', function () {
         location.reload();
     })
 })
 
 // Rating tracker
-$(function() {
+$(function () {
     updateStars();
 })
