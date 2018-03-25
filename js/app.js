@@ -99,16 +99,6 @@ function hideCard(card) {
     }, 500);
 }
 
-// Check for game finish
-// function checkFinished() {
-//     // All cards matched
-//     if (finishedCards.length === 16) {
-//         clearInterval(timerId);
-//         $('#seconds').text(timer);
-//         $('.modal').css('display', 'block');
-//     }
-// }
-
 // Increment and display moveCounter
 function incrementMoveCounter() {
     $('#move-counter').text(++moveCounter);
