@@ -79,13 +79,25 @@ function createCardHTML(array) {
 
 // Display card symbol
 function showCard(e) {
+    // Validate that the card is not already open
+    let isAlreadyOpen;
+
+    for (let i = 0; i < openCards.length; i++) {
+        if ($(openCards[i]).find('img').attr('alt') === ($(this).find('img').attr('alt'))) {
+            isAlreadyOpen = true;
+        }
+    }
     // Validate that the card is face-down
-    if ($(this).children('.front').hasClass('hide') &&
-        !$(this).children('.back').hasClass('hide')) {
-        // Show front/hide back of card, animate
-        $(this).children('.front').toggleClass('hide');
-        $(this).children('.back').toggleClass('hide');
-        $(this).children('.front').toggleClass('flip-in-hor-bottom');
+    if (!isAlreadyOpen) {
+        if ($(this).children('.front').hasClass('hide') &&
+            !$(this).children('.back').hasClass('hide')) {
+            // Show front/hide back of card, animate
+            $(this).children('.front').toggleClass('hide');
+            $(this).children('.back').toggleClass('hide');
+            $(this).children('.front').toggleClass('flip-in-hor-bottom');
+
+            incrementMoveCounter();
+        }
     }
 }
 
@@ -157,7 +169,6 @@ function checkForMatch(e) {
             }, 500);
         }
     }
-    incrementMoveCounter();
 }
 
 // Check for game finish

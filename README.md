@@ -13,6 +13,6 @@ To play the game, clone or download this repo and open `index.html` in a browser
 
 ## Dependencies
 
-- jQuery 
-- Font Awesome
+- jQuery
+- [Font Awesome](https://fontawesome.com/ "Font Awesome")
 - [CSS Reset](https://meyerweb.com/eric/tools/css/reset/ "CSS Reset")
