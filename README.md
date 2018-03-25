@@ -11,3 +11,8 @@ The game ends once all cards have been correctly matched.
 
 To play the game, clone or download this repo and open `index.html` in a browser.
 
+## Dependencies
+
+- jQuery 
+- Font Awesome
+- (https://meyerweb.com/eric/tools/css/reset/ 'CSS Reset')
