@@ -143,8 +143,10 @@ function hideCard(card) {
 
 // Check for card match
 function checkForMatch(e) {
+    // Debug
+    console.log('checkForMatch() was invoked');
     // A card is open
-    if (openCards.length > 1) {
+    // if (openCards.length > 1) {
         // Cards match 
         if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt') &&
             !$(this).is(openCards[0])) {
@@ -168,7 +170,7 @@ function checkForMatch(e) {
                 clearOpen();
             }, 500);
         }
-    }
+    // }
 }
 
 // Check for game finish
@@ -207,14 +209,14 @@ function startGameTimer() {
 // Update rating
 function updateStars() {
     starId = setInterval(function () {
-        // 0-20 seconds: 3 stars
+        // >20 moves: 3 stars
         if (moveCounter >= 0 && moveCounter <= 20) {
             stars = 3;
-        } else if (moveCounter >= 21 && moveCounter <= 40) { // 21-40 seconds: 2 stars
+        } else if (moveCounter >= 21 && moveCounter <= 40) { // 21-40 moves: 2 stars
             stars = 2;
             $('#thirdStar').replaceWith('<i class="far fa-star">');
             $('#modal-secondStar').replaceWith('<i class="far fa-star">');
-        } else {// 41-60 seconds: 1 star
+        } else {// 41+ moves: 1 star
             stars = 1;
             $('#secondStar').replaceWith('<i class="far fa-star">');
             $('#modal-thirdStar').replaceWith('<i class="far fa-star">');
@@ -246,7 +248,10 @@ $(function () {
     $('.card').click(addToOpen);
 
     // Card match/mismatch logic
-    $('.card').click(checkForMatch);
+    $('.card').click(function() {
+        if (openCards.length > 1) {
+            checkForMatch(); }
+        });
 
     $('.card').click(checkFinished);
 })
@@ -259,8 +264,8 @@ $(function () {
 // Reset button
 $(function () {
     $('#reset-btn').on('click', function () {
-        location.reload();
-    })
+        location.reload(true);
+    })  
 })
 
 // Play again button
