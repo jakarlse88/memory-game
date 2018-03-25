@@ -141,11 +141,11 @@ function updateStars() {
         } else if (moveCounter >= 21 && moveCounter <= 40) { // 21-40 moves: 2 stars
             stars = 2;
             $('#thirdStar').replaceWith('<i class="far fa-star">');
-            $('#modal-secondStar').replaceWith('<i class="far fa-star">');
+            $('#modal-thirdStar').replaceWith('<i class="far fa-star">');
         } else {// 41+ moves: 1 star
             stars = 1;
             $('#secondStar').replaceWith('<i class="far fa-star">');
-            $('#modal-thirdStar').replaceWith('<i class="far fa-star">');
+            $('#modal-secondStar').replaceWith('<i class="far fa-star">');
         }
     }, 500);
 }
