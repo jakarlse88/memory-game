@@ -208,9 +208,9 @@ function startGameTimer() {
 function updateStars() {
     starId = setInterval(function () {
         // 0-20 seconds: 3 stars
-        if (timer >= 0 && timer <= 20) {
+        if (moveCounter >= 0 && moveCounter <= 20) {
             stars = 3;
-        } else if (timer >= 21 && timer <= 40) { // 21-40 seconds: 2 stars
+        } else if (moveCounter >= 21 && moveCounter <= 40) { // 21-40 seconds: 2 stars
             stars = 2;
             $('#thirdStar').replaceWith('<i class="far fa-star">');
             $('#modal-secondStar').replaceWith('<i class="far fa-star">');
