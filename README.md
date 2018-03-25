@@ -16,3 +16,4 @@ To play the game, clone or download this repo and open `index.html` in a browser
 - jQuery
 - [Font Awesome](https://fontawesome.com/ "Font Awesome")
 - [CSS Reset](https://meyerweb.com/eric/tools/css/reset/ "CSS Reset")
+- [Kanji SVG Project](http://kanji.japan-diary.com/ "Kanji SVG Project")
