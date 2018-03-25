@@ -77,54 +77,6 @@ function createCardHTML(array) {
     }
 }
 
-// Display card symbol
-function showCard(e) {
-    // Validate that the card is not already open
-    let isAlreadyOpen;
-
-    for (let i = 0; i < openCards.length; i++) {
-        if ($(openCards[i]).find('img').attr('alt') === ($(this).find('img').attr('alt'))) {
-            isAlreadyOpen = true;
-        }
-    }
-    // Validate that the card is face-down
-    if (!isAlreadyOpen) {
-        if ($(this).children('.front').hasClass('hide') &&
-            !$(this).children('.back').hasClass('hide')) {
-            // Show front/hide back of card, animate
-            $(this).children('.front').toggleClass('hide');
-            $(this).children('.back').toggleClass('hide');
-            $(this).children('.front').toggleClass('flip-in-hor-bottom');
-
-            incrementMoveCounter();
-        }
-    }
-}
-
-// Add card to list of "open" cards
-function addToOpen(e) {
-    if (openCards.length <= 2) {
-        openCards.push(this);
-    }
-}
-
-// Add cards to list of "finished" cards
-function addToFinished(card) {
-    let existsInList = false;
-
-    // Validate that card is not already in list
-    for (let i = 0; i < finishedCards.length; i++) {
-        if ($(finishedCards[i]).find('img').attr('alt') === $(this).find('img').attr('alt')) {
-            existsInList = true;
-        }
-    }
-
-    // Add card
-    if (!existsInList) {
-        finishedCards.push(card);
-    }
-}
-
 // Clear list of "open" cards
 function clearOpen() {
     while (openCards.length >= 1) {
@@ -134,54 +86,28 @@ function clearOpen() {
 
 // Hide card symbol
 function hideCard(card) {
+    // Mismatch animation
     $(card).children('.front').toggleClass('wobble-hor-bottom');
+    // Clear mismatch animation for later re-use
+    setTimeout(function() {
+    $(card).children('.front').toggleClass('wobble-hor-bottom');
+    }, 500);
+    // Hide cards
     setTimeout(function() {
         $(card).children('.front').toggleClass('hide');
         $(card).children('.back').toggleClass('hide');
     }, 500);
 }
 
-// Check for card match
-function checkForMatch(e) {
-    // Debug
-    console.log('checkForMatch() was invoked');
-    // A card is open
-    // if (openCards.length > 1) {
-        // Cards match 
-        if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt') &&
-            !$(this).is(openCards[0])) {
-
-            // Match animation
-            $(this).children('.front').toggleClass('jello-horizontal');
-            $(openCards[0]).children('.front').toggleClass('jello-horizontal');
-
-            // Add cards to finishedCards
-            addToFinished(this);
-            addToFinished(openCards[0]);
-
-            // Clear openCards
-            clearOpen();
-        }
-        // Cards do not match
-        else {
-            setTimeout(function () {
-                hideCard(openCards[0]);
-                hideCard(openCards[1]);
-                clearOpen();
-            }, 500);
-        }
-    // }
-}
-
 // Check for game finish
-function checkFinished() {
-    // All cards matched
-    if (finishedCards.length === 16) {
-        clearInterval(timerId);
-        $('#seconds').text(timer);
-        $('.modal').css('display', 'block');
-    }
-}
+// function checkFinished() {
+//     // All cards matched
+//     if (finishedCards.length === 16) {
+//         clearInterval(timerId);
+//         $('#seconds').text(timer);
+//         $('.modal').css('display', 'block');
+//     }
+// }
 
 // Increment and display moveCounter
 function incrementMoveCounter() {
@@ -242,18 +168,75 @@ $(function () {
 // Card event listener
 $(function () {
     // Display card symbol
-    $('.card').click(showCard);
+    $('.card').click(function() {
+        // Validate that the card is face-down
+        if ($(this).children('.front').hasClass('hide') &&
+            !$(this).children('.back').hasClass('hide')) {
+            // Show front/hide back of card, animate
+            $(this).children('.front').toggleClass('hide');
+            $(this).children('.back').toggleClass('hide');
+            $(this).children('.front').toggleClass('flip-in-hor-bottom');
+                
+            incrementMoveCounter();
+        }
+    });
 
     // Add to list of open cards
-    $('.card').click(addToOpen);
+    $('.card').click(function() {
+        // Don't add the first-clicked card twice
+        if (openCards.length <= 2 && !$(this).is(openCards[0])) {
+            openCards.push(this);
+        }
+        console.log('openCards:');
+        console.log(openCards);
+    });
 
     // Card match/mismatch logic
     $('.card').click(function() {
+        // Debug
+        console.log(this);
+        // A card is open
         if (openCards.length > 1) {
-            checkForMatch(); }
-        });
+            // Cards match 
+            if ($(openCards[0]).find('img').attr('alt') === $(this).find('img').attr('alt')) {
 
-    $('.card').click(checkFinished);
+                // Match animation
+                $(this).children('.front').toggleClass('jello-horizontal');
+                $(openCards[0]).children('.front').toggleClass('jello-horizontal');
+
+                // Add cards to finishedCards
+                if (!$(this).hasClass('finished')) {
+                    $(this).toggleClass('finished');
+                    finishedCards.push(this);
+                }
+
+                if (!$(openCards[0]).hasClass('finished')) {
+                    $(openCards[0]).toggleClass('finished');
+                    finishedCards.push(openCards[0]);
+                }
+                
+                // Clear openCards
+                clearOpen();
+            }
+            // Cards do not match
+            else {
+                setTimeout(function () {
+                    hideCard(openCards[0]);
+                    hideCard(openCards[1]);
+                    clearOpen();
+                }, 500);
+            }
+        }
+    });
+
+    $('.card').click(function() {
+        // All cards matched
+        if (finishedCards.length === 16) {
+            clearInterval(timerId);
+            $('#seconds').text(timer);
+            $('.modal').css('display', 'block');
+        }
+    });
 })
 
 // Game timer 
