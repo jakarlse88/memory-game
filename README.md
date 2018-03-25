@@ -1,5 +1,5 @@
 # Memory Game Project
-This game was built as a required project for Udacity's Front-End Developer Nanodegree. It requires a fundamental understanding of HTML, CSS, and JavaScript. 
+This game was built as a required project for Udacity's Front-End Developer Nanodegree. It requires a fundamental understanding of HTML, CSS, and JavaScript.
 
 ## Functionality
 
